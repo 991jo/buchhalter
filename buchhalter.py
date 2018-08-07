@@ -41,7 +41,7 @@ class Buchhalter(Cmd):
     def do_add(self, arg):
         'add <amount> [type <type>] [date <date>] [description]'
         amount = self.get_amount()
-        t = selfget_type()
+        t = self.get_type()
         date = self.get_date()
         description = self.get_description()
 
@@ -136,7 +136,7 @@ class Buchhalter(Cmd):
                 return str(datetime.date.today())
             else:
                 try:
-                    date = datetime.datetime.strptime(date_in, "%Y-%M-%d")
+                    date = datetime.datetime.strptime(date_in, "%Y-%M-%d").date()
                     return str(date)
                 except ValueError:
                     print("'%s' is not a valid date format, must be YYYY-MM-DD" % date_in)
