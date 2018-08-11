@@ -136,7 +136,7 @@ class Buchhalter(Cmd):
                 return str(datetime.date.today())
             else:
                 try:
-                    date = datetime.datetime.strptime(date_in, "%Y-%M-%d").date()
+                    date = datetime.datetime.strptime(date_in, "%Y-%m-%d").date()
                     return str(date)
                 except ValueError:
                     print("'%s' is not a valid date format, must be YYYY-MM-DD" % date_in)
